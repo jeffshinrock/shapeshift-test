@@ -40,6 +40,7 @@ $(document).ready(function() {
         reseat($(this).attr('id'));
       }
     });
+    toggle_active($(this).attr('id'));
   });
   
   $('#marketing-doc').click(function(){
@@ -48,6 +49,7 @@ $(document).ready(function() {
         reseat($(this).attr('id'));
       }
     });
+    toggle_active($(this).attr('id'));
   });
   
   $('#video').click(function(){
@@ -56,6 +58,7 @@ $(document).ready(function() {
         reseat($(this).attr('id'));
       }
     });
+    toggle_active($(this).attr('id'));
   });
   
   $('#whitepaper').click(function(){
@@ -64,6 +67,7 @@ $(document).ready(function() {
         reseat($(this).attr('id'));
       }
     });
+    toggle_active($(this).attr('id'));
   });
   
   $('#reseat').click(function(){
@@ -73,7 +77,14 @@ $(document).ready(function() {
 
 });
 
-
+function toggle_active(id){
+  $link = $('#'+id);
+  if($link.hasClass('on')){
+    $link.removeClass('on');
+  } else {
+    $link.addClass('on');
+  }
+}
 
 function reseat(id){ 
   if($('#'+id).is(':visible')){
